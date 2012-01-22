@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+android:id="@+id/widget0"
+android:orientation="vertical"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+xmlns:android="http://schemas.android.com/apk/res/android"
+>
+<Chronometer
+android:id="@+id/chrono"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+></Chronometer>
+
+<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_weight="3"
+	android:orientation="horizontal">
+	
+	 <FrameLayout 
+android:layout_width="0px"
+android:layout_height="fill_parent"
+android:layout_weight="6"
+>
+<ImageView 
+android:layout_width="wrap_content"
+android:layout_height="fill_parent"
+android:src="@drawable/counter_window2"
+android:layout_gravity="center"
+android:gravity="center"
+>
+</ImageView>
+<TextView
+android:id="@+id/count1"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0"
+android:textSize="50px"
+android:textColor="#ffffff"
+android:layout_gravity="center"
+android:gravity="center"
+>
+</TextView>
+</FrameLayout>
+
+<ImageButton
+android:id="@+id/button1"
+android:src="@drawable/counter_button_maru"
+android:layout_width="0px"
+android:layout_height="fill_parent"
+android:layout_weight="4"
+android:background="@null"
+>
+</ImageButton>
+	
+</LinearLayout>
+
+	<LinearLayout
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:layout_weight="4"
+	android:background="#d3d3d3"
+	android:orientation="horizontal">
+
+	 <FrameLayout 
+android:layout_width="0px"
+android:layout_height="fill_parent"
+android:layout_weight="6"
+>
+<ImageView 
+android:layout_width="wrap_content"
+android:layout_height="fill_parent"
+android:src="@drawable/counter_window2"
+android:layout_gravity="center"
+android:gravity="center"
+>
+</ImageView>
+<TextView
+android:id="@+id/count2"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0"
+android:textSize="50px"
+android:textColor="#ffffff"
+android:layout_gravity="center"
+android:gravity="center"
+>
+</TextView>
+</FrameLayout>
+
+<ImageButton
+android:id="@+id/button2"
+android:src="@drawable/counter_button_batu"
+android:layout_width="0px"
+android:layout_height="fill_parent"
+android:layout_weight="4"
+android:background="@null"
+>
+</ImageButton>
+</LinearLayout>
+<jp.co.nobot.libAdMaker.libAdMaker
+android:id="@+id/admakerview"
+android:layout_width="fill_parent"
+android:layout_height="wrap_content"
+android:scrollbars="none"
+/>
+</LinearLayout>

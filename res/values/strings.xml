@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">Counter</string>
+<string name="app_name_free">Counter</string>
+
+<string name="disp_count">Count</string>
+<string name="disp_time">Time</string>
+<string name="disp_count_num">Count</string>
+
+<string name="option_menu_save">Save</string>
+<string name="option_menu_clear">Clear</string>
+<string name="option_menu_disp">Display</string>
+<string name="option_menu_pref">Settings</string>
+<string name="option_menu_help">Help</string>
+<string name="option_export_all">Export all</string>
+<string name="option_remove_all">Delete all</string>
+<string name="option_export">Export</string>
+<string name="option_remove">Delete</string>
+<string name="option_chart">Make chart</string>
+
+<string name="pref_sound">Sound</string>
+<string name="sound_summary">Use sound for count</string>
+<string name="pref_vib">Vibration</string>
+<string name="vib_summary">Use vibration for count</string>
+<string name="pref_gps">GPS</string>
+<string name="gps_summary">Save data with location</string>
+<string name="pref_mail">E-mail</string>
+<string name="mail_summary">Set e-mail address for data export</string>
+<string name="button_set">button_set</string>
+<string name="pref_button">Number of buttons</string>
+<string name="title_button">Number of buttons</string>
+<string name="button_summary">Set number of buttons</string>
+
+<string name="cnt_save_title">Title</string>
+<string name="cnt_submit">Submit</string>
+<string name="cnt_error">Error</string>
+<string name="cnt_input_req">Please input one character or more.</string>
+<string name="cnt_ok">Yes</string>
+<string name="cnt_cancel">Cancel</string>
+<string name="cnt_fail_location">Coundn\'t get location data.</string>
+<string name="cnt_clear">Clear</string>
+<string name="cnt_clear_confirm">Clear?</string>
+<string name="cnt_ng">No</string>
+<string name="cnt_finish">Close Application</string>
+<string name="cnt_finish_confirm">Close?</string>
+<string name="cnt_info_title">Counter</string>
+<string name="cnt_info_web">To web site</string>
+
+<string name="dm_count_num">Count total:</string>
+<string name="dm_savetime">Date and time:</string>
+<string name="dm_place">Place</string>
+<string name="dm_dialog_select">Selection</string>
+<string name="dm_dialog_export">Export</string>
+<string name="dm_export_format">Title,Count total,Date and time</string>
+<string name="dm_export_format_with_location">Title,Count total,Date and time,Place</string>
+<string name="dm_button">Button</string>
+<string name="dm_time_count">Time,Count total</string>
+<string name="dm_error">Error</string>
+<string name="dm_missing_mailer">Couldn\'t find a mailer.</string>
+<string name="dm_export_sd_ok">Succeeded saving to SD card.</string>
+<string name="dm_export_sd_ng">Couldn\'t save to SD card</string>
+<string name="dm_delete">Delete</string>
+<string name="dm_delete_confirm">Delete？</string>
+<string name="dm_dialog_export_all">Export all</string>
+<string name="dm_delete_all">Delete all</string>
+<string name="dm_delete_confirm_all">Delete all?</string>
+
+<string name="ds_counter">Counter</string>
+
+<string name="cp_change_button">Change number of buttons</string>
+<string name="cp_change_confirm">Discard current number of counts. Is it OK to change?</string>
+
+<string name="app_abstract">This counting application lets you keep a tally. 
+Let\'s count in the park, at school, at work, at shops, anywhere!</string>
+<string name="app_copyright">Copyright(C) 2011 Gen Okuyama. All Rights Reserved.</string>
+</resources>

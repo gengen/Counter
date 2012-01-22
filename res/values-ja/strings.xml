@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string name="app_name">数取くん</string>
+<string name="app_name_free">数取くん</string>
+
+<string name="disp_count">カウント</string>
+<string name="disp_time">時刻</string>
+<string name="disp_count_num">カウント数</string>
+
+<string name="option_menu_save">保存</string>
+<string name="option_menu_clear">カウントクリア</string>
+<string name="option_menu_disp">保存データ表示</string>
+<string name="option_menu_pref">設定</string>
+<string name="option_menu_help">ヘルプ</string>
+<string name="option_export_all">全エクスポート</string>
+<string name="option_remove_all">全削除</string>
+<string name="option_export">エクスポート</string>
+<string name="option_remove">削除</string>
+<string name="option_chart">グラフ作成</string>
+
+<string name="pref_sound">サウンドの利用</string>
+<string name="sound_summary">カウント時に音を鳴らす</string>
+<string name="pref_vib">バイブレータの利用</string>
+<string name="vib_summary">カウント時にバイブレータを動作させる</string>
+<string name="pref_gps">GPS利用</string>
+<string name="gps_summary">保存データに位置情報を付与する</string>
+<string name="pref_mail">メールアドレス設定</string>
+<string name="mail_summary">エクスポート用のメールアドレスを設定する</string>
+<string name="button_set">button_set</string>
+<string name="pref_button">カウンタボタン数設定</string>
+<string name="title_button">ボタン数設定</string>
+<string name="button_summary">カウンタのボタン数を設定する</string>
+
+<string name="cnt_save_title">保存タイトル入力</string>
+<string name="cnt_submit">確定</string>
+<string name="cnt_error">エラー</string>
+<string name="cnt_input_req">1文字以上入力してください</string>
+<string name="cnt_ok">はい</string>
+<string name="cnt_cancel">キャンセル</string>
+<string name="cnt_fail_location">位置情報を取得できませんでした</string>
+<string name="cnt_clear">カウンタのクリア</string>
+<string name="cnt_clear_confirm">クリアしますか？</string>
+<string name="cnt_ng">いいえ</string>
+<string name="cnt_finish">アプリの終了</string>
+<string name="cnt_finish_confirm">アプリを終了しますか？</string>
+<string name="cnt_info_title">数取くん</string>
+<string name="cnt_info_web">サイトへ</string>
+
+<string name="dm_count_num">カウント数：</string>
+<string name="dm_savetime">保存日時：</string>
+<string name="dm_place">場所</string>
+<string name="dm_dialog_select">選択</string>
+<string name="dm_dialog_export">のエクスポート</string>
+<string name="dm_export_format">題名,カウント数,保存日時</string>
+<string name="dm_export_format_with_location">題名,カウント数,保存日時,場所</string>
+<string name="dm_button">ボタン</string>
+<string name="dm_time_count">時刻,カウント数</string>
+<string name="dm_error">エラー</string>
+<string name="dm_missing_mailer">メーラが見つかりません</string>
+<string name="dm_export_sd_ok">SDに書き込みました</string>
+<string name="dm_export_sd_ng">SDに書き込めません</string>
+<string name="dm_delete">削除</string>
+<string name="dm_delete_confirm">削除しますか？</string>
+<string name="dm_dialog_export_all">全データのエクスポート</string>
+<string name="dm_delete_all">全データの削除</string>
+<string name="dm_delete_confirm_all">保存データを全削除しますか？</string>
+
+<string name="ds_counter">カウンター</string>
+
+<string name="cp_change_button">ボタン数変更</string>
+<string name="cp_change_confirm">現在のカウント数は破棄されます。変更しますか？</string>
+
+<string name="app_abstract">野鳥の会でおなじみの数取器をイメージしたアプリです。
+街で、交差点で、学校で、会社で、公園で、どんどん数えちゃってください！！</string>
+<string name="app_copyright">Copyright(C) 2011 Gen Okuyama. All Rights Reserved.</string>
+</resources>

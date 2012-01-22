@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>  
+<resources>  
+  
+<string-array name="entries">  
+ <item>1つ</item>  
+ <item>2つ</item>  
+ </string-array>  
+  
+<string-array name="entryvalues">
+ <item>1</item>  
+ <item>2</item>  
+ </string-array>  
+  
+<string-array name="dm_context_charge">
+ <item>エクスポート</item>
+ <item>削除</item>
+ <item>キャンセル</item>
+ </string-array>  
+  
+<string-array name="dm_context_free">
+ <item>削除</item>
+ <item>キャンセル</item>
+ </string-array>  
+  
+<string-array name="dm_howtoexport">
+ <item>メールで送信</item>
+ <item>SDに書込み</item>
+ <item>キャンセル</item>
+ </string-array>  
+  
+</resources>

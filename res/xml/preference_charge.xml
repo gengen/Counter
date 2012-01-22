@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android">
+      <PreferenceCategory android:title="設定">   
+        <CheckBoxPreference android:title="@string/pref_sound"
+        	android:key="sound_setting"
+        	android:summary="@string/sound_summary">
+        </CheckBoxPreference>   
+        <CheckBoxPreference android:title="@string/pref_vib"
+        	android:key="vib_setting"
+        	android:summary="@string/vib_summary">
+        </CheckBoxPreference>
+        <!--
+        <CheckBoxPreference android:title="@string/pref_gps"
+        	android:key="gps_setting"
+        	android:summary="@string/gps_summary">
+        </CheckBoxPreference>
+        -->
+        <EditTextPreference android:title="@string/pref_mail"
+        	android:key="mail_setting"
+        	android:summary="@string/mail_summary">
+        </EditTextPreference>
+    	<ListPreference 
+    		android:key="@string/button_set"
+			android:title="@string/pref_button"   
+    		android:dialogTitle="@string/title_button"
+			android:entries="@array/entries"
+			android:summary="@string/button_summary"
+			android:entryValues="@array/entryvalues" >
+		</ListPreference>
+</PreferenceCategory>   
+</PreferenceScreen>
