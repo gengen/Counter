@@ -25,7 +25,7 @@ import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemLongClickListener;
 
-import jp.co.nobot.libAdMaker.libAdMaker;
+import mediba.ad.sdk.android.openx.MasAdView;
 
 public class DataManager extends Activity {
 	private static final int MENU_EXPORT_ALL = 0;
@@ -38,8 +38,8 @@ public class DataManager extends Activity {
 	//保存データリスト
 	String[] savedata = null;
 
-	//for admaker
-	private libAdMaker AdMaker = null;
+	//for mediba ab
+	private MasAdView mAd = null;
 	
 	ArrayList<DataList> mDataArray = null; 
 	
@@ -57,12 +57,9 @@ public class DataManager extends Activity {
     private void setDataDisplay(){
 		setContentView(R.layout.list);
 		
-        AdMaker = (libAdMaker)findViewById(R.id.admakerview);
-        AdMaker.siteId = "1401";
-        AdMaker.zoneId = "5936";
-        AdMaker.setUrl("http://images.ad-maker.info/apps/izwc6d3n6s4l.html");
-        AdMaker.setBackgroundColor(Color.TRANSPARENT);
-        AdMaker.start();
+        mAd = (MasAdView)findViewById(R.id.adview);
+        mAd.setAuid("112070");
+        mAd.start();
     }
     
     //保存データ表示処理
@@ -648,26 +645,22 @@ public class DataManager extends Activity {
         return Integer.toString(year) + month + day + hour + minute + second;
     }
     
+    protected void onResume(){
+        mAd.start();
+    	super.onResume();
+    }
+    
     protected void onPause(){
+    	mAd.stop();
     	super.onPause();
-    	if(AdMaker != null){
-        	AdMaker.stop();
-    	}
     }
     
     protected void onRestart(){
     	super.onRestart();
-    	if(AdMaker != null){
-    		AdMaker.start();
-    	}
     }
     
     protected void onDestroy(){
     	super.onDestroy();
-    	if(AdMaker != null){
-    		AdMaker.destroy();
-        	AdMaker = null;
-    	}
     }
     
 }

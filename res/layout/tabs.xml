@@ -40,8 +40,8 @@ android:gravity="center"
 android:background="#696969">
 
 <LinearLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
 android:orientation="horizontal"
 >
 <TextView
@@ -83,8 +83,8 @@ android:layout_height="wrap_content"
 android:background="#696969">
 
 <LinearLayout
-android:layout_width="match_parent"
-android:layout_height="match_parent"
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
 android:orientation="horizontal"
 >
 <TextView
@@ -108,12 +108,16 @@ android:text="@string/disp_count_num">
 </TableLayout>
 </ScrollView>
 </FrameLayout>
-<jp.co.nobot.libAdMaker.libAdMaker
-android:id="@+id/admakerview"
-android:layout_width="fill_parent"
-android:layout_height="wrap_content"
-android:layout_gravity="bottom"
-android:scrollbars="none"
-/>
+
+<RelativeLayout
+    android:id="@+id/adcontainer"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="false">
+    <mediba.ad.sdk.android.openx.MasAdView
+        android:id="@+id/adview"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
 </LinearLayout>
 </TabHost>

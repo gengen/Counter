@@ -4,8 +4,6 @@ import java.io.*;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
-import jp.co.nobot.libAdMaker.libAdMaker;
-
 import android.app.AlertDialog;
 import android.app.TabActivity;
 import android.content.ActivityNotFoundException;
@@ -24,7 +22,7 @@ import android.widget.*;
 import android.widget.TabHost.OnTabChangeListener;
 import android.widget.TabHost.TabSpec;
 
-import jp.co.nobot.libAdMaker.libAdMaker;
+import mediba.ad.sdk.android.openx.MasAdView;
 
 public class DataState extends TabActivity implements OnTabChangeListener{
 	private static final int MENU_EXPORT = 0;
@@ -39,8 +37,8 @@ public class DataState extends TabActivity implements OnTabChangeListener{
 	String timecount = "";
 	String button = "";
 	
-	//for admaker
-	private libAdMaker AdMaker = null;
+	//for mediba ab
+	private MasAdView mAd = null;
 	
 	/** Called when the activity is first created. */
     @Override
@@ -169,12 +167,9 @@ public class DataState extends TabActivity implements OnTabChangeListener{
     		}
     	}
 
-    	AdMaker = (libAdMaker)findViewById(R.id.admakerview);
-        AdMaker.siteId = "1401";
-        AdMaker.zoneId = "5936";
-        AdMaker.setUrl("http://images.ad-maker.info/apps/izwc6d3n6s4l.html");
-        AdMaker.setBackgroundColor(Color.TRANSPARENT);
-        AdMaker.start();
+        mAd = (MasAdView)findViewById(R.id.adview);
+        mAd.setAuid("112070");
+        mAd.start();
     }
     
     private void getDetailData(){
@@ -483,25 +478,22 @@ public class DataState extends TabActivity implements OnTabChangeListener{
 		
 	}
 	
+    protected void onResume(){
+        mAd.start();
+    	super.onResume();
+    }
+    
     protected void onPause(){
+    	mAd.stop();
     	super.onPause();
-    	if(AdMaker != null){
-        	AdMaker.stop();
-    	}
     }
     
     protected void onRestart(){
+    	mAd.start();
     	super.onRestart();
-    	if(AdMaker != null){
-    		AdMaker.start();
-    	}
     }
     
     protected void onDestroy(){
     	super.onDestroy();
-    	if(AdMaker != null){
-    		AdMaker.destroy();
-        	AdMaker = null;
-    	}
     }
 }

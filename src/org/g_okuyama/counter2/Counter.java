@@ -23,7 +23,7 @@ import android.database.sqlite.*;
 import android.graphics.Color;
 import android.graphics.Typeface;
 
-import jp.co.nobot.libAdMaker.libAdMaker;
+import mediba.ad.sdk.android.openx.MasAdView;
 
 public class Counter extends Activity {
 	public static final boolean CHARGE_FLAG = false;
@@ -59,8 +59,8 @@ public class Counter extends Activity {
 	private String pretime1 = "";
 	private String pretime2 = "";
 	
-	//for admaker
-	private libAdMaker AdMaker = null;
+	//for mediba ab
+	private MasAdView mAd = null;
 	
 	/*
 	//位置情報保存用オブジェクト
@@ -148,12 +148,9 @@ public class Counter extends Activity {
     	//クロノメータ設定
         chronometer = (Chronometer)findViewById(R.id.chrono);
         
-        AdMaker = (libAdMaker)findViewById(R.id.admakerview);
-        AdMaker.siteId = "1401";
-        AdMaker.zoneId = "5936";
-        AdMaker.setUrl("http://images.ad-maker.info/apps/izwc6d3n6s4l.html");
-        AdMaker.setBackgroundColor(Color.TRANSPARENT);
-        AdMaker.start();
+        mAd = (MasAdView)findViewById(R.id.adview);
+        mAd.setAuid("112070");
+        mAd.start();
     }
     
     private void action(){
@@ -743,6 +740,7 @@ public class Counter extends Activity {
     		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
     	}
     	*/
+        mAd.start();
     	super.onResume();
     }
     
@@ -754,10 +752,8 @@ public class Counter extends Activity {
     		locationManager = null;
     	}
     	*/
+    	mAd.stop();
     	super.onPause();
-    	if(AdMaker != null){
-        	AdMaker.stop();
-    	}
     }
     
     protected void onDestroy(){
@@ -769,18 +765,12 @@ public class Counter extends Activity {
     	}
     	*/
 
+    	//mAd.destroy();
     	super.onDestroy();
-    	if(AdMaker != null){
-    		AdMaker.destroy();
-        	AdMaker = null;
-    	}
     }
     
     protected void onRestart(){
     	super.onRestart();
-    	if(AdMaker != null){
-    		AdMaker.start();
-    	}
     }
     
     public void finish(){
