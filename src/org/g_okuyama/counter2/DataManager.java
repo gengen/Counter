@@ -1,6 +1,7 @@
 package org.g_okuyama.counter2;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.regex.Pattern;
 
@@ -40,6 +41,8 @@ public class DataManager extends Activity {
 	//for admaker
 	private libAdMaker AdMaker = null;
 	
+	ArrayList<DataList> mDataArray = null; 
+	
 	/** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -71,14 +74,21 @@ public class DataManager extends Activity {
     	SQLiteDatabase db = dbhelper.getWritableDatabase();
     	String query = "select * from counter;";
     	Cursor c = db.rawQuery(query, null);
+    	
+    	mDataArray = new ArrayList<DataList>();
 
     	//保存データ数を取得
     	int rowcount = c.getCount();
-
     	if(rowcount == 0){
         	//保存データがない場合
     		savedata = new String[1];
     		savedata[0] = new String("No data");
+    		//
+    		DataList list = new DataList();
+    		list.setName("No data");
+    		list.setCount("");
+    		mDataArray.add(list);
+    		
     	}else{
     		dbid = new Integer[rowcount];
     		savedata = new String[rowcount];
@@ -105,6 +115,14 @@ public class DataManager extends Activity {
 							+ crlf
 							+ getString(R.string.dm_place) + place);
 							*/
+    				
+    				DataList list = new DataList();
+    				list.setName(title);
+    				list.setCount(getString(R.string.dm_count_num) 
+    				        + crlf + cstr[0] + ", " + cstr[1]);
+                    list.setDate(getString(R.string.dm_savetime) + crlf + date);
+    				mDataArray.add(list);
+    				
     			}else{
     				savedata[i] = new String(title + crlf
 							+ getString(R.string.dm_count_num) + cnt + crlf
@@ -112,7 +130,13 @@ public class DataManager extends Activity {
     						/*
 							+ crlf
 							+ getString(R.string.dm_place) + place);
-							*/    				
+							*/
+    				
+                    DataList list = new DataList();
+                    list.setName(title);
+                    list.setCount(getString(R.string.dm_count_num) + crlf + cnt);
+                    list.setDate(getString(R.string.dm_savetime) + crlf + date);
+                    mDataArray.add(list);
     			}
 
     			//降順に並べる
@@ -124,7 +148,8 @@ public class DataManager extends Activity {
 
 		//保存データの表示
 		ListView lv = (ListView)this.findViewById(R.id.widget42);
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.data, savedata);
+		//ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.listitem, savedata);
+		DataArrayAdapter adapter = new DataArrayAdapter(this, android.R.layout.simple_list_item_1, mDataArray);
 		lv.setAdapter(adapter);
 
 		//データ選択時のリスナを登録
