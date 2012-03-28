@@ -46,8 +46,8 @@
 <string name="cnt_info_title">Counter</string>
 <string name="cnt_info_web">To web site</string>
 
-<string name="dm_count_num">Count total:</string>
-<string name="dm_savetime">Date and time:</string>
+<string name="dm_count_num">Count total</string>
+<string name="dm_savetime">Date and time</string>
 <string name="dm_place">Place</string>
 <string name="dm_dialog_select">Selection</string>
 <string name="dm_dialog_export">Export</string>

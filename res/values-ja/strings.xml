@@ -31,7 +31,7 @@
 <string name="title_button">ボタン数設定</string>
 <string name="button_summary">カウンタのボタン数を設定する</string>
 
-<string name="cnt_save_title">保存タイトル入力</string>
+<string name="cnt_save_title">タイトル</string>
 <string name="cnt_submit">確定</string>
 <string name="cnt_error">エラー</string>
 <string name="cnt_input_req">1文字以上入力してください</string>
@@ -46,8 +46,8 @@
 <string name="cnt_info_title">数取くん</string>
 <string name="cnt_info_web">サイトへ</string>
 
-<string name="dm_count_num">カウント数：</string>
-<string name="dm_savetime">保存日時：</string>
+<string name="dm_count_num">カウント数</string>
+<string name="dm_savetime">保存日時</string>
 <string name="dm_place">場所</string>
 <string name="dm_dialog_select">選択</string>
 <string name="dm_dialog_export">のエクスポート</string>

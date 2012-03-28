@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 public class DataArrayAdapter extends ArrayAdapter<DataList> {
@@ -26,8 +28,9 @@ public class DataArrayAdapter extends ArrayAdapter<DataList> {
          * ただし、VISIBLE設定を初期化したほうがよい。
          */
         //if(convertView == null){
-            convertView = mInflater.inflate(R.layout.listitem, null);
+    	convertView = mInflater.inflate(R.layout.listitem, null);
         //}
+
         
         //現在の行に設定するオブジェクト
         DataList data = (DataList)getItem(position);
@@ -44,14 +47,25 @@ public class DataArrayAdapter extends ArrayAdapter<DataList> {
         TextView dateView = (TextView)convertView.findViewById(R.id.item_date);
         dateView.setText(data.getDate());
         
+		if(!isEnabled(position)){
+			convertView.setBackgroundColor(0xff696969);			
+			return convertView;
+		}
+        
         return convertView;
     }
     
     @Override  
     public boolean isEnabled(int position) {
+    	/*
         if(getItem(position).getName().equals("No data") 
                 && getItem(position).getCount().equals("")){
             return false;
+        }
+        */
+        
+        if(getItem(position).getDBID() == -9999){
+        	return false;
         }
         else{
             return true;

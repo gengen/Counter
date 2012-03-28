@@ -16,15 +16,16 @@ android:layout_height="wrap_content"/>
 
 <FrameLayout
 android:id="@android:id/tabcontent"  
-android:layout_width="wrap_content"
+android:layout_width="fill_parent"
 android:layout_height="0px"
 android:layout_weight="1"
 >
 
 <ScrollView
 android:id="@+id/scrollview01"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content">
+android:layout_width="fill_parent"
+android:layout_height="fill_parent"
+>
 
 <TableLayout
 android:id="@+id/table1_1"
@@ -34,10 +35,14 @@ android:stretchColumns="0">
 
 <TableRow
 android:id="@+id/tablerow1_1"
-android:layout_width="wrap_content"
+android:layout_width="fill_parent"
 android:layout_height="wrap_content"
+android:paddingTop="7dp"
+android:paddingBottom="7dp"
+android:background="#696969"
 android:gravity="center"
-android:background="#696969">
+android:layout_gravity="center"
+>
 
 <LinearLayout
 android:layout_width="fill_parent"
@@ -46,30 +51,33 @@ android:orientation="horizontal"
 >
 <TextView
 android:id="@+id/textview1_1"
-android:layout_width="wrap_content"
+android:layout_width="0pt"
 android:layout_height="wrap_content"
 android:layout_weight="1"
+android:paddingLeft="10px"
+android:paddingRight="10px"
 android:text="@string/disp_time">
 </TextView>  
 
 <TextView
 android:id="@+id/textview1_2"
-android:layout_width="wrap_content"
+android:layout_width="0pt"
 android:layout_height="wrap_content"
 android:layout_weight="1"
 android:gravity="right"
+android:paddingLeft="10px"
+android:paddingRight="10px"
 android:text="@string/disp_count_num">
 </TextView>
 </LinearLayout>
-
 </TableRow>
 </TableLayout>
 </ScrollView>
 
 <ScrollView
 android:id="@+id/scrollview02"
-android:layout_width="wrap_content"
-android:layout_height="wrap_content">
+android:layout_width="fill_parent"
+android:layout_height="fill_parent">
 <TableLayout
 android:id="@+id/table2_1"
 android:layout_width="fill_parent"
@@ -78,9 +86,14 @@ android:stretchColumns="0">
 
 <TableRow
 android:id="@+id/tablerow2_1"
-android:layout_width="wrap_content"
+android:layout_width="fill_parent"
 android:layout_height="wrap_content"
-android:background="#696969">
+android:background="#696969"
+android:paddingTop="7dp"
+android:paddingBottom="7dp"
+android:gravity="center"
+android:layout_gravity="center"
+>
 
 <LinearLayout
 android:layout_width="fill_parent"
@@ -92,15 +105,20 @@ android:id="@+id/textview2_1"
 android:layout_width="0pt"
 android:layout_height="wrap_content"
 android:layout_weight="1"
+android:paddingLeft="10px"
+android:paddingRight="10px"
+
 android:text="@string/disp_time">
 </TextView>  
 
 <TextView
 android:id="@+id/textview2_2"
-android:layout_width="wrap_content"
+android:layout_width="0pt"
 android:layout_height="wrap_content"
 android:layout_weight="1"
 android:gravity="right"
+android:paddingLeft="10px"
+android:paddingRight="10px"
 android:text="@string/disp_count_num">
 </TextView>
 </LinearLayout>

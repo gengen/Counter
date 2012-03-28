@@ -73,6 +73,14 @@ public class DataManager extends Activity {
     	Cursor c = db.rawQuery(query, null);
     	
     	mDataArray = new ArrayList<DataList>();
+    	
+		//タイトルを作成
+		DataList titleList = new DataList();
+		titleList.setName(getString(R.string.cnt_save_title));
+		titleList.setCount(getString(R.string.dm_count_num));
+        titleList.setDate(getString(R.string.dm_savetime));
+        titleList.setDBID(-9999);
+		mDataArray.add(titleList);
 
     	//保存データ数を取得
     	int rowcount = c.getCount();
@@ -80,12 +88,7 @@ public class DataManager extends Activity {
         	//保存データがない場合
     		savedata = new String[1];
     		savedata[0] = new String("No data");
-    		//
-    		DataList list = new DataList();
-    		list.setName("No data");
-    		list.setCount("");
-    		mDataArray.add(list);
-    		
+
     	}else{
     		dbid = new Integer[rowcount];
     		savedata = new String[rowcount];
@@ -102,6 +105,8 @@ public class DataManager extends Activity {
 
     			dbid[i] = c.getInt(0);
 
+    			String countStr = "";
+
     			if(c.getString(6).equals("2")){
     				String[] cstr = cnt.split(",");
     				savedata[i] = new String(title + crlf
@@ -113,13 +118,8 @@ public class DataManager extends Activity {
 							+ getString(R.string.dm_place) + place);
 							*/
     				
-    				DataList list = new DataList();
-    				list.setName(title);
-    				list.setCount(getString(R.string.dm_count_num) 
-    				        + crlf + cstr[0] + ", " + cstr[1]);
-                    list.setDate(getString(R.string.dm_savetime) + crlf + date);
-    				mDataArray.add(list);
-    				
+    				countStr = cstr[0] + ", " + cstr[1];
+
     			}else{
     				savedata[i] = new String(title + crlf
 							+ getString(R.string.dm_count_num) + cnt + crlf
@@ -129,13 +129,18 @@ public class DataManager extends Activity {
 							+ getString(R.string.dm_place) + place);
 							*/
     				
-                    DataList list = new DataList();
-                    list.setName(title);
-                    list.setCount(getString(R.string.dm_count_num) + crlf + cnt);
-                    list.setDate(getString(R.string.dm_savetime) + crlf + date);
-                    mDataArray.add(list);
+    				countStr = cnt;
     			}
 
+    			String[] dstr = date.split(" ");
+
+				//表示するリストを作成
+				DataList list = new DataList();
+				list.setName(title);
+				list.setCount(countStr);
+                list.setDate(dstr[0]);
+				mDataArray.add(list);
+				
     			//降順に並べる
     			c.moveToPrevious();
     		}
@@ -165,7 +170,7 @@ public class DataManager extends Activity {
         	//intent作成
         	Intent intent = new Intent(DataManager.this, DataState.class);
         	//選択項目のDBのIDを渡す
-        	intent.putExtra("id", dbid[position]);
+        	intent.putExtra("id", dbid[position-1]);//positionからタイトル分の1を引く
         	//intentを発行しカウントの詳細画面を表示
         	startActivityForResult(intent, REQUEST_CODE);
         }
@@ -182,7 +187,8 @@ public class DataManager extends Activity {
         		return true;
         	}
 			
-			position = pos;
+			//タイトル分を引く
+			position = pos-1;
 
 			if(Counter.CHARGE_FLAG){
 				new AlertDialog.Builder(DataManager.this)

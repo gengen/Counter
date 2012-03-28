@@ -162,7 +162,7 @@ public class Counter extends Activity {
         //バイブレータ設定が有効の場合はバイブレータを動作させる
         if(CounterPreference.isVibration(this)){
             ((Vibrator)getSystemService(VIBRATOR_SERVICE)).vibrate(30);
-        }        
+        }
     }
     
     //カウンタを増やす

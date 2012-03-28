@@ -85,20 +85,12 @@ public class DataState extends TabActivity implements OnTabChangeListener{
     		
     			TableLayout tl = (TableLayout)findViewById(R.id.table1_1);
     			TableRow tr = new TableRow(this);
-    			tr.setLayoutParams(new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT));
-    			//tr.setGravity(Gravity.CENTER);
-    			
-    			/*
-    			LinearLayout ll = new LinearLayout(this);
-    			ll.setLayoutParams(new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
-						LayoutParams.WRAP_CONTENT));
-    			ll.setOrientation(LinearLayout.HORIZONTAL);
-    			*/
-    			
     			TextView tv1 = new TextView(this);
     			tv1.setText(str2[0]);
+    			tv1.setPadding(10, 0, 0, 0);
     			TextView tv2 = new TextView(this);
     			tv2.setText(str2[1]);
+    			tv2.setPadding(0, 0, 10, 0);
     			tr.addView(tv1);
     			tr.addView(tv2);
     			tl.addView(tr, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
@@ -115,7 +107,7 @@ public class DataState extends TabActivity implements OnTabChangeListener{
     		if(count.equals("0,0")){
     			timecount = "Unknown 0:::Unknown 0";
     		}
-    		
+
     		//まずボタンA、Bの保存データを分ける
     		String[] button_str = timecount.split(":::");
 
@@ -127,7 +119,7 @@ public class DataState extends TabActivity implements OnTabChangeListener{
     			timecount = button_str[0] + ":::" + "Unknown 0";
     			button_str = timecount.split(":::");
     		}
-    		
+
     		//次にボタンA、Bそれぞれのデータを表示する
     		String[] str_a = button_str[0].split(",");
     		//TableLayout形式で時刻とカウント数を表示
@@ -139,8 +131,10 @@ public class DataState extends TabActivity implements OnTabChangeListener{
     			TableRow tr = new TableRow(this);
     			TextView tv1 = new TextView(this);
     			tv1.setText(str_a2[0]);
+    			tv1.setPadding(20, 0, 0, 0);
     			TextView tv2 = new TextView(this);
     			tv2.setText(str_a2[1]);
+    			tv2.setPadding(0, 0, 20, 0);
     			tr.addView(tv1);
     			tr.addView(tv2);
     			tl.addView(tr, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
@@ -158,8 +152,10 @@ public class DataState extends TabActivity implements OnTabChangeListener{
     			TableRow tr = new TableRow(this);
     			TextView tv1 = new TextView(this);
     			tv1.setText(str_b2[0]);
+    			tv1.setPadding(20, 0, 0, 0);
     			TextView tv2 = new TextView(this);
     			tv2.setText(str_b2[1]);
+    			tv2.setPadding(0, 0, 20, 0);
     			tr.addView(tv1);
     			tr.addView(tv2);
     			tl.addView(tr, new TableLayout.LayoutParams(LayoutParams.WRAP_CONTENT,
